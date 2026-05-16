@@ -187,6 +187,7 @@ python main.py access.log \
 ✓ TestReporters        – 6 tests
 ✓ TestIntegration      – 1 test
 ```
+🎬 **Video hoạt động:** *https://drive.google.com/file/d/1uQ9-96Eneh9pxS7wGY8gWtTG6LRalRix/view?usp=sharing*
 
 ---
 
