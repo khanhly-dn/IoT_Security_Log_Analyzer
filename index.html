@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log Analysis Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #080b0f;
+    --bg2:       #0d1117;
+    --bg3:       #161b22;
+    --border:    #21262d;
+    --text:      #e6edf3;
+    --muted:     #7d8590;
+    --accent:    #58a6ff;
+    --green:     #3fb950;
+    --yellow:    #d29922;
+    --orange:    #f0883e;
+    --red:       #f85149;
+    --critical:  #ff4444;
+    --high:      #f0883e;
+    --medium:    #d29922;
+    --low:       #58a6ff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Scanline overlay ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.03) 2px,
+      rgba(0,0,0,0.03) 4px
+    );
+    pointer-events: none;
+    z-index: 999;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: var(--accent);
+    letter-spacing: -0.5px;
+  }
+
+  .logo span { color: var(--muted); font-weight: 400; }
+
+  .status-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    animation: pulse 2s infinite;
+    margin-left: auto;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .header-meta {
+    color: var(--muted);
+    font-size: 0.75rem;
+  }
+
+  /* ── Main layout ── */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  /* ── Upload zone ── */
+  .upload-section {
+    margin-bottom: 40px;
+  }
+
+  .section-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .drop-zone {
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 60px 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--bg2);
+    position: relative;
+  }
+
+  .drop-zone:hover, .drop-zone.dragover {
+    border-color: var(--accent);
+    background: rgba(88,166,255,0.05);
+  }
+
+  .drop-zone input[type="file"] {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+
+  .drop-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .drop-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .drop-sub {
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+
+  .file-list {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .file-chip {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .file-chip .remove {
+    cursor: pointer;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1;
+  }
+  .file-chip .remove:hover { color: var(--red); }
+
+  /* ── Settings ── */
+  .settings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  @media (max-width: 768px) {
+    .settings-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .setting-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+  }
+
+  .setting-card label {
+    display: block;
+    font-size: 0.68rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .setting-card input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    padding: 6px 10px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .setting-card input:focus { border-color: var(--accent); }
+
+  /* ── Button ── */
+  .btn-analyze {
+    width: 100%;
+    padding: 16px;
+    background: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 8px;
+  }
+
+  .btn-analyze:hover { background: #79c0ff; transform: translateY(-1px); }
+  .btn-analyze:active { transform: translateY(0); }
+  .btn-analyze:disabled { background: var(--border); color: var(--muted); cursor: not-allowed; transform: none; }
+
+  /* ── Loading ── */
+  .loading {
+    display: none;
+    text-align: center;
+    padding: 60px;
+    color: var(--muted);
+  }
+
+  .loading.active { display: block; }
+
+  .spinner {
+    display: inline-block;
+    width: 32px; height: 32px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-bottom: 16px;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ── Results ── */
+  #results { display: none; }
+  #results.active { display: block; }
+
+  /* ── Stats row ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  @media (max-width: 900px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .stat-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .stat-value {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* ── Top offenders ── */
+  .panel {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .panel-header .count {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+  }
+
+  /* ── Table ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+  }
+
+  th {
+    text-align: left;
+    padding: 10px 16px;
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg3);
+  }
+
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid rgba(33,38,45,0.6);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(88,166,255,0.03); }
+
+  /* ── Severity badge ── */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .badge-CRITICAL { background: rgba(255,68,68,0.15); color: var(--critical); border: 1px solid rgba(255,68,68,0.3); }
+  .badge-HIGH     { background: rgba(240,136,62,0.15); color: var(--high);     border: 1px solid rgba(240,136,62,0.3); }
+  .badge-MEDIUM   { background: rgba(210,153,34,0.15); color: var(--medium);   border: 1px solid rgba(210,153,34,0.3); }
+  .badge-LOW      { background: rgba(88,166,255,0.15); color: var(--low);      border: 1px solid rgba(88,166,255,0.3); }
+
+  .ip-code {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 0.82rem;
+  }
+
+  .type-tag {
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+  }
+
+  .evidence-row {
+    margin-top: 5px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .evidence-key { color: #7d8590; }
+  .evidence-val { color: #adbac7; }
+
+  /* ── Filter bar ── */
+  .filter-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .filter-btn.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 700; }
+  .filter-btn.active.CRITICAL { background: var(--critical); border-color: var(--critical); }
+  .filter-btn.active.HIGH     { background: var(--high);     border-color: var(--high);     }
+  .filter-btn.active.MEDIUM   { background: var(--medium);   border-color: var(--medium); color: #000; }
+
+  /* ── Empty state ── */
+  .empty-state {
+    text-align: center;
+    padding: 60px;
+    color: var(--muted);
+  }
+
+  .empty-state .icon { font-size: 3rem; margin-bottom: 16px; }
+
+  /* ── Error ── */
+  .error-box {
+    background: rgba(248,81,73,0.1);
+    border: 1px solid rgba(248,81,73,0.3);
+    border-radius: 6px;
+    padding: 16px 20px;
+    color: var(--red);
+    margin-bottom: 24px;
+    display: none;
+  }
+  .error-box.active { display: block; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LOG<span>/</span>ANALYZER</div>
+  <div class="header-meta">Security Log Analysis Tool</div>
+  <div class="status-dot"></div>
+</header>
+
+<main>
+
+  <!-- Upload Section -->
+  <div class="upload-section">
+    <div class="section-label">01 — Upload Log Files</div>
+    <div class="drop-zone" id="dropZone">
+      <input type="file" id="fileInput" multiple accept=".log,.txt,.json,text/*">
+      <span class="drop-icon">📂</span>
+      <div class="drop-title">Drop log files here or click to browse</div>
+      <div class="drop-sub">Apache, Nginx, Syslog, JSON — multiple files supported</div>
+    </div>
+    <div class="file-list" id="fileList"></div>
+  </div>
+
+  <!-- Settings -->
+  <div class="upload-section">
+    <div class="section-label">02 — Detection Thresholds</div>
+    <div class="settings-grid">
+      <div class="setting-card">
+        <label>Requests / min</label>
+        <input type="number" id="freq_threshold" value="100" min="1">
+      </div>
+      <div class="setting-card">
+        <label>Error rate (0–1)</label>
+        <input type="number" id="error_rate" value="0.40" step="0.05" min="0" max="1">
+      </div>
+      <div class="setting-card">
+        <label>Distinct paths</label>
+        <input type="number" id="scan_paths" value="50" min="1">
+      </div>
+      <div class="setting-card">
+        <label>Auth failures</label>
+        <input type="number" id="auth_fail" value="5" min="1">
+      </div>
+    </div>
+    <button class="btn-analyze" id="analyzeBtn" onclick="runAnalysis()">
+      ⚡ ANALYZE LOGS
+    </button>
+  </div>
+
+  <!-- Error -->
+  <div class="error-box" id="errorBox"></div>
+
+  <!-- Loading -->
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <div>Analysing log entries…</div>
+  </div>
+
+  <!-- Results -->
+  <div id="results">
+
+    <!-- Stats row -->
+    <div class="section-label">03 — Results</div>
+    <div class="stats-row" id="statsRow"></div>
+
+    <!-- Top offenders -->
+    <div class="panel" id="offendersPanel">
+      <div class="panel-header">
+        🎯 Top Offenders
+        <span class="count" id="offenderCount">0</span>
+      </div>
+      <table id="offendersTable">
+        <thead>
+          <tr>
+            <th>IP Address</th>
+            <th>Risk Score</th>
+            <th>Anomaly Types</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Anomaly details -->
+    <div class="panel">
+      <div class="panel-header">
+        🔍 Anomaly Details
+        <span class="count" id="anomalyCount">0</span>
+        <div class="filter-bar" style="margin:0;margin-left:auto">
+          <button class="filter-btn active" onclick="filterAnomalies('ALL')">All</button>
+          <button class="filter-btn CRITICAL" onclick="filterAnomalies('CRITICAL')">Critical</button>
+          <button class="filter-btn HIGH" onclick="filterAnomalies('HIGH')">High</button>
+          <button class="filter-btn MEDIUM" onclick="filterAnomalies('MEDIUM')">Medium</button>
+          <button class="filter-btn LOW" onclick="filterAnomalies('LOW')">Low</button>
+        </div>
+      </div>
+      <div id="anomalyTableWrap">
+        <table id="anomalyTable">
+          <thead>
+            <tr>
+              <th>Severity</th>
+              <th>Type</th>
+              <th>IP Address</th>
+              <th>Description & Evidence</th>
+              <th>First Seen</th>
+              <th>Last Seen</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <div class="empty-state" id="emptyState" style="display:none">
+          <div class="icon">✅</div>
+          <div>No anomalies found at this severity level</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /results -->
+
+</main>
+
+<script>
+  let selectedFiles = [];
+  let allAnomalies  = [];
+
+  // ── Drag & drop ────────────────────────────────────────────────────────────
+  const dropZone = document.getElementById('dropZone');
+
+  dropZone.addEventListener('dragover', e => {
+    e.preventDefault();
+    dropZone.classList.add('dragover');
+  });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    addFiles([...e.dataTransfer.files]);
+  });
+
+  document.getElementById('fileInput').addEventListener('change', e => {
+    addFiles([...e.target.files]);
+  });
+
+  function addFiles(files) {
+    files.forEach(f => {
+      if (!selectedFiles.find(x => x.name === f.name && x.size === f.size)) {
+        selectedFiles.push(f);
+      }
+    });
+    renderFileList();
+  }
+
+  function removeFile(idx) {
+    selectedFiles.splice(idx, 1);
+    renderFileList();
+  }
+
+  function renderFileList() {
+    const list = document.getElementById('fileList');
+    list.innerHTML = selectedFiles.map((f, i) => `
+      <div class="file-chip">
+        📄 ${f.name}
+        <span class="remove" onclick="removeFile(${i})">×</span>
+      </div>
+    `).join('');
+  }
+
+  // ── Run analysis ───────────────────────────────────────────────────────────
+  async function runAnalysis() {
+    if (selectedFiles.length === 0) {
+      showError('Please select at least one log file.');
+      return;
+    }
+
+    hideError();
+    setLoading(true);
+
+    const fd = new FormData();
+    selectedFiles.forEach(f => fd.append('files', f));
+    fd.append('freq_threshold', document.getElementById('freq_threshold').value);
+    fd.append('error_rate',     document.getElementById('error_rate').value);
+    fd.append('scan_paths',     document.getElementById('scan_paths').value);
+    fd.append('auth_fail',      document.getElementById('auth_fail').value);
+
+    try {
+      const res  = await fetch('/analyze', { method: 'POST', body: fd });
+      const data = await res.json();
+
+      if (!res.ok) {
+        showError(data.error || 'Analysis failed.');
+        return;
+      }
+
+      allAnomalies = data.anomalies;
+      renderResults(data);
+
+    } catch (err) {
+      showError('Connection error: ' + err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  // ── Render ─────────────────────────────────────────────────────────────────
+  function renderResults(data) {
+    const { summary, anomalies, file_stats } = data;
+    const sev = summary.by_severity || {};
+
+    // Stats row
+    document.getElementById('statsRow').innerHTML = `
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--accent)">${fmt(summary.total_entries_processed)}</div>
+        <div class="stat-label">Entries</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">${fmt(summary.unique_ips)}</div>
+        <div class="stat-label">Unique IPs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--text)">${fmt(summary.total_anomalies)}</div>
+        <div class="stat-label">Anomalies</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--critical)">${sev.CRITICAL || 0}</div>
+        <div class="stat-label">Critical</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--high)">${sev.HIGH || 0}</div>
+        <div class="stat-label">High</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color:var(--medium)">${sev.MEDIUM || 0}</div>
+        <div class="stat-label">Medium</div>
+      </div>
+    `;
+
+    // Top offenders
+    const offenders = summary.top_offenders || [];
+    document.getElementById('offenderCount').textContent = offenders.length;
+    document.querySelector('#offendersTable tbody').innerHTML = offenders.map(o => `
+      <tr>
+        <td><span class="ip-code">${o.ip}</span></td>
+        <td><span style="color:var(--red);font-weight:700">${o.risk_score}</span></td>
+        <td>${o.anomaly_types.map(t => `<span class="type-tag">${t}</span>`).join(' ')}</td>
+      </tr>
+    `).join('') || '<tr><td colspan="3" style="color:var(--muted);text-align:center;padding:30px">No offenders found</td></tr>';
+
+    // Anomalies
+    document.getElementById('anomalyCount').textContent = anomalies.length;
+    renderAnomalyTable(anomalies);
+
+    document.getElementById('results').classList.add('active');
+    document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function renderAnomalyTable(anomalies) {
+    const tbody = document.querySelector('#anomalyTable tbody');
+    const empty = document.getElementById('emptyState');
+
+    if (anomalies.length === 0) {
+      tbody.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+
+    tbody.innerHTML = anomalies.map(a => {
+      const evLines = Object.entries(a.evidence || {})
+        .map(([k, v]) => `<span class="evidence-key">${k}:</span> <span class="evidence-val">${JSON.stringify(v).slice(0, 120)}</span>`)
+        .join('<br>');
+
+      return `
+        <tr data-severity="${a.severity}">
+          <td><span class="badge badge-${a.severity}">${a.severity}</span></td>
+          <td><span class="type-tag">${a.type}</span></td>
+          <td><span class="ip-code">${a.ip}</span></td>
+          <td>
+            ${a.description}
+            ${evLines ? `<div class="evidence-row">${evLines}</div>` : ''}
+          </td>
+          <td style="color:var(--muted);font-size:0.75rem;white-space:nowrap">${a.first_seen || '–'}</td>
+          <td style="color:var(--muted);font-size:0.75rem;white-space:nowrap">${a.last_seen  || '–'}</td>
+        </tr>
+      `;
+    }).join('');
+  }
+
+  function filterAnomalies(sev) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+
+    const filtered = sev === 'ALL'
+      ? allAnomalies
+      : allAnomalies.filter(a => a.severity === sev);
+
+    renderAnomalyTable(filtered);
+  }
+
+  // ── Helpers ────────────────────────────────────────────────────────────────
+  function fmt(n) {
+    return typeof n === 'number' ? n.toLocaleString() : n;
+  }
+
+  function setLoading(on) {
+    document.getElementById('loading').classList.toggle('active', on);
+    document.getElementById('analyzeBtn').disabled = on;
+    if (on) document.getElementById('results').classList.remove('active');
+  }
+
+  function showError(msg) {
+    const box = document.getElementById('errorBox');
+    box.textContent = '⚠ ' + msg;
+    box.classList.add('active');
+  }
+
+  function hideError() {
+    document.getElementById('errorBox').classList.remove('active');
+  }
+</script>
+</body>
+</html>

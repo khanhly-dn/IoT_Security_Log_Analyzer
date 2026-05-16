@@ -1,0 +1,585 @@
+May 15 00:00:51 auth01 sudo[11024]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 00:04:20 auth01 cron[32797]: Disk usage check: /dev/sda1 45% used
+May 15 00:05:33 auth01 kernel[44439]: session closed for user admin
+May 15 00:06:10 web01 pam_unix[38197]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 00:13:23 auth01 sshd[39579]: Disk usage check: /dev/sda1 45% used
+May 15 00:16:56 db01 pam_unix[39329]: Disk usage check: /dev/sda1 45% used
+May 15 00:18:54 db01 cron[27661]: pam_unix(sshd:session): session opened for user www-data
+May 15 00:20:26 db01 cron[57662]: Cron job completed successfully
+May 15 00:24:07 auth01 kernel[13221]: session closed for user admin
+May 15 00:25:34 web01 sudo[13505]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 00:37:12 web01 kernel[7584]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 00:39:22 web01 kernel[58058]: session opened for user admin by (uid=0)
+May 15 00:41:40 auth01 sudo[21928]: pam_unix(sshd:session): session opened for user www-data
+May 15 00:46:10 auth01 sshd[15646]: Cron job completed successfully
+May 15 00:46:29 auth01 kernel[32617]: Disk usage check: /dev/sda1 45% used
+May 15 00:46:42 auth01 pam_unix[58092]: session closed for user admin
+May 15 00:49:02 db01 pam_unix[15809]: Disk usage check: /dev/sda1 45% used
+May 15 00:54:19 db01 sudo[7673]: Cron job completed successfully
+May 15 00:55:34 web01 kernel[12531]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 00:55:53 web01 sshd[12206]: Cron job completed successfully
+May 15 01:00:05 db01 pam_unix[57427]: Cron job completed successfully
+May 15 01:00:50 db01 sudo[61448]: session opened for user admin by (uid=0)
+May 15 01:03:47 web01 pam_unix[38688]: Disk usage check: /dev/sda1 45% used
+May 15 01:04:01 auth01 sshd[7382]: pam_unix(sshd:session): session opened for user www-data
+May 15 01:06:17 auth01 pam_unix[41767]: session closed for user admin
+May 15 01:06:52 auth01 sudo[43933]: session opened for user admin by (uid=0)
+May 15 01:10:17 web01 cron[13647]: session opened for user admin by (uid=0)
+May 15 01:13:00 web01 cron[32350]: session closed for user admin
+May 15 01:19:59 auth01 kernel[61192]: Disk usage check: /dev/sda1 45% used
+May 15 01:24:42 db01 sshd[55048]: Cron job completed successfully
+May 15 01:27:17 web01 sshd[64332]: pam_unix(sshd:session): session opened for user www-data
+May 15 01:29:48 db01 kernel[3649]: session opened for user admin by (uid=0)
+May 15 01:33:39 db01 cron[41794]: Disk usage check: /dev/sda1 45% used
+May 15 01:38:18 web01 pam_unix[39944]: session closed for user admin
+May 15 01:39:48 db01 pam_unix[29845]: session opened for user admin by (uid=0)
+May 15 01:41:37 db01 kernel[56089]: Cron job completed successfully
+May 15 01:49:22 auth01 cron[37720]: session opened for user admin by (uid=0)
+May 15 01:50:15 web01 sudo[40228]: session opened for user admin by (uid=0)
+May 15 01:50:37 db01 sudo[4835]: session closed for user admin
+May 15 01:57:47 auth01 kernel[51775]: pam_unix(sshd:session): session opened for user www-data
+May 15 01:58:53 auth01 kernel[33774]: session closed for user admin
+May 15 02:00:00 auth01 sshd[38718]: Failed password for root from 198.51.100.7 port 42236 ssh2
+May 15 02:00:01 auth01 sshd[25803]: Failed password for ubuntu from 198.51.100.7 port 58856 ssh2
+May 15 02:00:06 auth01 sshd[39075]: Failed password for oracle from 198.51.100.7 port 37710 ssh2
+May 15 02:00:08 auth01 sshd[50069]: Failed password for pi from 198.51.100.7 port 63591 ssh2
+May 15 02:00:14 auth01 sshd[17969]: Failed password for oracle from 198.51.100.7 port 54753 ssh2
+May 15 02:00:17 auth01 sshd[25321]: Failed password for pi from 198.51.100.7 port 61786 ssh2
+May 15 02:00:17 auth01 sshd[31967]: Failed password for pi from 198.51.100.7 port 50680 ssh2
+May 15 02:00:17 auth01 sshd[52895]: Failed password for oracle from 198.51.100.7 port 48303 ssh2
+May 15 02:00:18 auth01 sshd[38296]: Failed password for pi from 198.51.100.7 port 42010 ssh2
+May 15 02:00:20 auth01 sshd[25088]: Failed password for ubuntu from 198.51.100.7 port 53207 ssh2
+May 15 02:00:25 auth01 sshd[25103]: Failed password for oracle from 198.51.100.7 port 35486 ssh2
+May 15 02:00:26 auth01 sshd[42214]: Failed password for admin from 198.51.100.7 port 43015 ssh2
+May 15 02:00:29 auth01 sshd[22745]: Failed password for root from 198.51.100.7 port 64077 ssh2
+May 15 02:00:30 auth01 sshd[45097]: Failed password for ubuntu from 198.51.100.7 port 30181 ssh2
+May 15 02:00:32 auth01 sshd[40497]: Failed password for oracle from 198.51.100.7 port 33280 ssh2
+May 15 02:00:35 auth01 sshd[15279]: Failed password for root from 198.51.100.7 port 57626 ssh2
+May 15 02:00:38 auth01 sshd[50481]: Failed password for postgres from 198.51.100.7 port 48169 ssh2
+May 15 02:00:43 auth01 sshd[13369]: Failed password for root from 198.51.100.7 port 42038 ssh2
+May 15 02:00:43 auth01 sshd[17910]: Failed password for admin from 198.51.100.7 port 50203 ssh2
+May 15 02:00:45 auth01 sshd[52385]: Failed password for ubuntu from 198.51.100.7 port 32924 ssh2
+May 15 02:00:50 auth01 sshd[15597]: Failed password for admin from 198.51.100.7 port 60694 ssh2
+May 15 02:00:51 auth01 sshd[41265]: Failed password for ubuntu from 198.51.100.7 port 60498 ssh2
+May 15 02:00:55 auth01 sshd[13442]: Failed password for oracle from 198.51.100.7 port 57041 ssh2
+May 15 02:00:58 auth01 sshd[30333]: Failed password for postgres from 198.51.100.7 port 52753 ssh2
+May 15 02:00:59 auth01 sshd[30610]: Failed password for ubuntu from 198.51.100.7 port 30402 ssh2
+May 15 02:01:04 auth01 sshd[18027]: Failed password for postgres from 198.51.100.7 port 59999 ssh2
+May 15 02:01:04 auth01 sshd[20526]: Failed password for ubuntu from 198.51.100.7 port 61035 ssh2
+May 15 02:01:05 auth01 sshd[17258]: Failed password for pi from 198.51.100.7 port 35693 ssh2
+May 15 02:01:06 auth01 sshd[40876]: Failed password for root from 198.51.100.7 port 53735 ssh2
+May 15 02:01:07 auth01 sshd[50380]: Failed password for oracle from 198.51.100.7 port 39310 ssh2
+May 15 02:01:09 auth01 sshd[14987]: Failed password for root from 198.51.100.7 port 32836 ssh2
+May 15 02:01:10 db01 sshd[2166]: Disk usage check: /dev/sda1 45% used
+May 15 02:01:22 auth01 sshd[59149]: Failed password for root from 198.51.100.7 port 33925 ssh2
+May 15 02:01:25 auth01 sshd[47077]: Failed password for oracle from 198.51.100.7 port 58872 ssh2
+May 15 02:01:28 auth01 sshd[47201]: Failed password for admin from 198.51.100.7 port 47996 ssh2
+May 15 02:01:32 auth01 sshd[15981]: Failed password for admin from 198.51.100.7 port 62813 ssh2
+May 15 02:01:34 auth01 sshd[13109]: Failed password for admin from 198.51.100.7 port 31578 ssh2
+May 15 02:01:36 auth01 sshd[45481]: Failed password for postgres from 198.51.100.7 port 49834 ssh2
+May 15 02:01:38 auth01 sshd[16258]: Failed password for ubuntu from 198.51.100.7 port 34327 ssh2
+May 15 02:01:38 auth01 sshd[26393]: Failed password for postgres from 198.51.100.7 port 41132 ssh2
+May 15 02:01:45 db01 sshd[2283]: pam_unix(sshd:session): session opened for user www-data
+May 15 02:01:47 auth01 sshd[32301]: Failed password for ubuntu from 198.51.100.7 port 40486 ssh2
+May 15 02:01:48 db01 kernel[50295]: session closed for user admin
+May 15 02:01:52 auth01 sshd[29336]: Failed password for pi from 198.51.100.7 port 63981 ssh2
+May 15 02:01:57 auth01 sshd[26190]: Failed password for admin from 198.51.100.7 port 63656 ssh2
+May 15 02:02:00 auth01 sshd[56730]: Failed password for oracle from 198.51.100.7 port 58190 ssh2
+May 15 02:02:05 auth01 sshd[29224]: Failed password for ubuntu from 198.51.100.7 port 38534 ssh2
+May 15 02:02:11 auth01 sshd[18347]: Failed password for root from 198.51.100.7 port 38964 ssh2
+May 15 02:02:11 auth01 sshd[24136]: Failed password for root from 198.51.100.7 port 48672 ssh2
+May 15 02:02:12 auth01 sshd[15184]: Failed password for ubuntu from 198.51.100.7 port 33096 ssh2
+May 15 02:02:12 auth01 sshd[48603]: Failed password for oracle from 198.51.100.7 port 34765 ssh2
+May 15 02:02:16 auth01 sshd[32804]: Failed password for pi from 198.51.100.7 port 52682 ssh2
+May 15 02:02:16 auth01 sshd[50047]: Failed password for ubuntu from 198.51.100.7 port 39096 ssh2
+May 15 02:02:17 auth01 sshd[52717]: Failed password for postgres from 198.51.100.7 port 62469 ssh2
+May 15 02:02:18 auth01 sshd[57649]: Failed password for postgres from 198.51.100.7 port 43008 ssh2
+May 15 02:02:19 auth01 sshd[59153]: Failed password for postgres from 198.51.100.7 port 45267 ssh2
+May 15 02:02:29 auth01 sshd[41244]: Failed password for admin from 198.51.100.7 port 41274 ssh2
+May 15 02:02:31 auth01 sshd[26553]: Failed password for ubuntu from 198.51.100.7 port 34827 ssh2
+May 15 02:02:32 auth01 sshd[39046]: Failed password for postgres from 198.51.100.7 port 39770 ssh2
+May 15 02:02:42 auth01 sshd[12066]: Failed password for postgres from 198.51.100.7 port 48596 ssh2
+May 15 02:02:44 auth01 sshd[53961]: Failed password for oracle from 198.51.100.7 port 44878 ssh2
+May 15 02:02:57 auth01 sshd[36320]: Failed password for admin from 198.51.100.7 port 38483 ssh2
+May 15 02:03:00 auth01 sshd[25801]: Failed password for admin from 198.51.100.7 port 53387 ssh2
+May 15 02:03:01 auth01 sshd[54209]: Failed password for root from 198.51.100.7 port 59235 ssh2
+May 15 02:03:10 auth01 sshd[59592]: Failed password for admin from 198.51.100.7 port 54618 ssh2
+May 15 02:03:13 auth01 sshd[39878]: Failed password for oracle from 198.51.100.7 port 42214 ssh2
+May 15 02:03:22 auth01 sshd[59730]: Failed password for admin from 198.51.100.7 port 57554 ssh2
+May 15 02:03:25 auth01 sshd[18169]: Failed password for ubuntu from 198.51.100.7 port 31952 ssh2
+May 15 02:03:28 auth01 sshd[13651]: Failed password for ubuntu from 198.51.100.7 port 42226 ssh2
+May 15 02:03:35 auth01 sshd[23732]: Failed password for ubuntu from 198.51.100.7 port 31079 ssh2
+May 15 02:03:38 auth01 sshd[29135]: Failed password for ubuntu from 198.51.100.7 port 47270 ssh2
+May 15 02:03:47 auth01 sshd[35247]: Failed password for pi from 198.51.100.7 port 46236 ssh2
+May 15 02:04:17 auth01 sshd[42293]: Failed password for root from 198.51.100.7 port 57825 ssh2
+May 15 02:04:33 auth01 sshd[30073]: Failed password for root from 198.51.100.7 port 55671 ssh2
+May 15 02:04:35 auth01 sshd[11301]: Failed password for ubuntu from 198.51.100.7 port 43131 ssh2
+May 15 02:04:42 auth01 sshd[35092]: Failed password for root from 198.51.100.7 port 50432 ssh2
+May 15 02:04:51 auth01 sshd[44357]: Failed password for admin from 198.51.100.7 port 50261 ssh2
+May 15 02:05:02 auth01 sshd[36818]: Failed password for postgres from 198.51.100.7 port 36248 ssh2
+May 15 02:05:14 auth01 sshd[18339]: Failed password for pi from 198.51.100.7 port 34784 ssh2
+May 15 02:05:21 auth01 sshd[46442]: Failed password for root from 198.51.100.7 port 52747 ssh2
+May 15 02:05:23 auth01 sshd[20468]: Failed password for oracle from 198.51.100.7 port 55775 ssh2
+May 15 02:05:31 auth01 sshd[12767]: Failed password for ubuntu from 198.51.100.7 port 53312 ssh2
+May 15 02:05:44 auth01 sshd[35155]: Disk usage check: /dev/sda1 45% used
+May 15 02:05:53 auth01 sshd[23530]: Failed password for postgres from 198.51.100.7 port 40977 ssh2
+May 15 02:06:40 auth01 sshd[40569]: Accepted password for root from 198.51.100.7 port 41538 ssh2
+May 15 02:07:19 web01 kernel[49548]: Cron job completed successfully
+May 15 02:07:40 web01 sudo[59573]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 02:11:39 auth01 cron[64181]: Disk usage check: /dev/sda1 45% used
+May 15 02:12:00 web01 kernel[1919]: pam_unix(sshd:session): session opened for user www-data
+May 15 02:16:17 db01 sudo[14450]: Cron job completed successfully
+May 15 02:19:55 auth01 sshd[23482]: session closed for user admin
+May 15 02:23:39 db01 cron[37166]: Cron job completed successfully
+May 15 02:25:58 web01 cron[55023]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 02:28:26 db01 cron[42885]: session closed for user admin
+May 15 02:31:10 db01 pam_unix[56892]: Disk usage check: /dev/sda1 45% used
+May 15 02:43:31 db01 pam_unix[34590]: Disk usage check: /dev/sda1 45% used
+May 15 02:44:45 auth01 pam_unix[57097]: Cron job completed successfully
+May 15 02:47:35 auth01 sshd[11234]: pam_unix(sshd:session): session opened for user www-data
+May 15 02:48:12 db01 kernel[36323]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 02:49:21 web01 pam_unix[64328]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 02:49:59 auth01 sshd[26881]: Accepted password for root from 198.51.100.7 port 44460 ssh2
+May 15 02:50:10 auth01 pam_unix[53886]: session closed for user admin
+May 15 02:56:35 auth01 kernel[60558]: Cron job completed successfully
+May 15 03:02:04 auth01 sshd[14006]: Accepted password for root from 198.51.100.7 port 44160 ssh2
+May 15 03:02:12 web01 kernel[52205]: pam_unix(sshd:session): session opened for user www-data
+May 15 03:02:54 db01 sshd[20826]: pam_unix(sshd:session): session opened for user www-data
+May 15 03:04:43 web01 sudo[9522]: Cron job completed successfully
+May 15 03:06:02 db01 kernel[49593]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 03:06:28 db01 kernel[45658]: session closed for user admin
+May 15 03:10:31 web01 sudo[45977]: Disk usage check: /dev/sda1 45% used
+May 15 03:12:21 auth01 cron[58925]: pam_unix(sshd:session): session opened for user www-data
+May 15 03:13:42 auth01 sshd[50564]: session closed for user admin
+May 15 03:14:20 web01 sshd[44394]: session closed for user admin
+May 15 03:19:02 auth01 sshd[45720]: Accepted password for root from 198.51.100.7 port 43053 ssh2
+May 15 03:21:55 db01 pam_unix[32649]: pam_unix(sshd:session): session opened for user www-data
+May 15 03:23:47 auth01 sshd[23289]: Accepted password for root from 198.51.100.7 port 42120 ssh2
+May 15 03:26:19 web01 pam_unix[32334]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 03:27:13 auth01 sudo[37784]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 03:31:50 auth01 pam_unix[18325]: session opened for user admin by (uid=0)
+May 15 03:37:16 db01 kernel[62807]: pam_unix(sshd:session): session opened for user www-data
+May 15 03:42:51 auth01 cron[33872]: Disk usage check: /dev/sda1 45% used
+May 15 03:44:17 web01 cron[24286]: Cron job completed successfully
+May 15 03:47:37 auth01 kernel[7853]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 03:48:46 web01 cron[13470]: pam_unix(sshd:session): session opened for user www-data
+May 15 03:49:11 web01 kernel[17699]: session closed for user admin
+May 15 03:56:38 auth01 cron[63229]: session closed for user admin
+May 15 03:56:58 db01 cron[43924]: Disk usage check: /dev/sda1 45% used
+May 15 04:00:29 db01 pam_unix[16805]: Cron job completed successfully
+May 15 04:00:50 web01 kernel[40156]: session closed for user admin
+May 15 04:03:04 auth01 sudo[22846]: session closed for user admin
+May 15 04:04:51 db01 sudo[29015]: Cron job completed successfully
+May 15 04:05:28 web01 kernel[56359]: session closed for user admin
+May 15 04:06:37 db01 kernel[47914]: session opened for user admin by (uid=0)
+May 15 04:11:19 web01 sshd[13493]: session opened for user admin by (uid=0)
+May 15 04:12:50 db01 sshd[23680]: session closed for user admin
+May 15 04:13:18 db01 kernel[58337]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 04:14:13 web01 sshd[60412]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 04:30:04 db01 kernel[50054]: Disk usage check: /dev/sda1 45% used
+May 15 04:32:55 auth01 kernel[29717]: session opened for user admin by (uid=0)
+May 15 04:34:52 web01 sudo[31424]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 04:42:41 auth01 sshd[42339]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 04:45:11 auth01 kernel[29415]: session opened for user admin by (uid=0)
+May 15 04:45:33 auth01 sudo[52582]: session opened for user admin by (uid=0)
+May 15 04:48:01 db01 sudo[6799]: session closed for user admin
+May 15 04:49:45 auth01 sshd[48238]: session opened for user admin by (uid=0)
+May 15 05:01:44 web01 sshd[4976]: Cron job completed successfully
+May 15 05:02:27 web01 sudo[22669]: session closed for user admin
+May 15 05:03:16 db01 sshd[12617]: pam_unix(sshd:session): session opened for user www-data
+May 15 05:07:52 auth01 cron[21891]: Cron job completed successfully
+May 15 05:08:29 web01 sshd[31095]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 05:14:45 auth01 cron[60514]: session opened for user admin by (uid=0)
+May 15 05:24:10 db01 cron[64107]: Cron job completed successfully
+May 15 05:25:31 auth01 kernel[28310]: pam_unix(sshd:session): session opened for user www-data
+May 15 05:26:37 db01 cron[13066]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 05:29:41 auth01 sudo[27839]: session opened for user admin by (uid=0)
+May 15 05:33:08 web01 sshd[41800]: Cron job completed successfully
+May 15 05:34:09 db01 cron[48340]: Disk usage check: /dev/sda1 45% used
+May 15 05:34:16 db01 sshd[49502]: pam_unix(sshd:session): session opened for user www-data
+May 15 05:34:56 auth01 sudo[45376]: pam_unix(sshd:session): session opened for user www-data
+May 15 05:41:12 web01 pam_unix[26274]: pam_unix(sshd:session): session opened for user www-data
+May 15 05:42:04 db01 pam_unix[58947]: session opened for user admin by (uid=0)
+May 15 05:43:47 auth01 cron[29543]: pam_unix(sshd:session): session opened for user www-data
+May 15 05:44:32 web01 sshd[36056]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 05:44:59 auth01 sudo[38202]: Cron job completed successfully
+May 15 05:48:01 web01 cron[16831]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 05:51:02 web01 pam_unix[4234]: Cron job completed successfully
+May 15 06:04:54 db01 sshd[30917]: Cron job completed successfully
+May 15 06:05:37 db01 kernel[29432]: session opened for user admin by (uid=0)
+May 15 06:10:31 db01 kernel[38402]: Cron job completed successfully
+May 15 06:15:32 db01 sudo[42189]: Disk usage check: /dev/sda1 45% used
+May 15 06:15:59 web01 sshd[26285]: Disk usage check: /dev/sda1 45% used
+May 15 06:16:06 db01 sudo[18943]: session closed for user admin
+May 15 06:19:07 web01 kernel[29847]: session opened for user admin by (uid=0)
+May 15 06:19:08 auth01 kernel[7055]: Cron job completed successfully
+May 15 06:21:40 auth01 pam_unix[64203]: session closed for user admin
+May 15 06:22:07 db01 sudo[52904]: session opened for user admin by (uid=0)
+May 15 06:26:59 db01 kernel[54016]: session opened for user admin by (uid=0)
+May 15 06:29:41 auth01 cron[54005]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 06:32:24 auth01 sshd[47887]: session opened for user admin by (uid=0)
+May 15 06:42:50 web01 kernel[35632]: Cron job completed successfully
+May 15 06:42:57 db01 kernel[36858]: session opened for user admin by (uid=0)
+May 15 06:45:53 db01 pam_unix[23986]: Disk usage check: /dev/sda1 45% used
+May 15 06:49:26 db01 sudo[53607]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 06:51:33 web01 pam_unix[48225]: Cron job completed successfully
+May 15 06:57:49 web01 cron[28770]: Disk usage check: /dev/sda1 45% used
+May 15 07:00:01 auth01 kernel[62987]: Disk usage check: /dev/sda1 45% used
+May 15 07:11:03 db01 sudo[61105]: pam_unix(sshd:session): session opened for user www-data
+May 15 07:12:06 db01 sudo[59521]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 07:14:29 db01 cron[20377]: Disk usage check: /dev/sda1 45% used
+May 15 07:15:09 db01 kernel[24376]: Cron job completed successfully
+May 15 07:17:02 auth01 cron[55446]: Disk usage check: /dev/sda1 45% used
+May 15 07:17:59 auth01 pam_unix[60316]: session closed for user admin
+May 15 07:19:32 auth01 pam_unix[12957]: Disk usage check: /dev/sda1 45% used
+May 15 07:19:35 db01 sshd[15659]: Disk usage check: /dev/sda1 45% used
+May 15 07:19:55 auth01 cron[25709]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 07:21:10 db01 pam_unix[11627]: Disk usage check: /dev/sda1 45% used
+May 15 07:21:27 web01 sudo[41215]: session opened for user admin by (uid=0)
+May 15 07:25:05 auth01 pam_unix[48176]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 07:25:26 db01 kernel[63622]: Cron job completed successfully
+May 15 07:25:55 web01 pam_unix[49402]: Cron job completed successfully
+May 15 07:27:01 db01 kernel[45888]: pam_unix(sshd:session): session opened for user www-data
+May 15 07:29:17 db01 sshd[8298]: pam_unix(sshd:session): session opened for user www-data
+May 15 07:30:31 db01 sshd[31713]: session opened for user admin by (uid=0)
+May 15 07:33:50 auth01 cron[23278]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 07:37:22 db01 cron[10900]: Disk usage check: /dev/sda1 45% used
+May 15 07:41:21 auth01 sudo[9476]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 07:42:28 web01 sshd[63940]: pam_unix(sshd:session): session opened for user www-data
+May 15 07:43:42 auth01 pam_unix[21129]: session closed for user admin
+May 15 07:45:19 db01 kernel[17281]: session closed for user admin
+May 15 07:45:43 db01 pam_unix[33350]: Disk usage check: /dev/sda1 45% used
+May 15 07:53:41 db01 kernel[54996]: session closed for user admin
+May 15 07:56:42 web01 pam_unix[6490]: session closed for user admin
+May 15 07:57:59 db01 cron[56710]: Cron job completed successfully
+May 15 08:00:06 web01 sudo[43607]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 08:03:44 web01 sudo[40969]: pam_unix(sshd:session): session opened for user www-data
+May 15 08:03:53 auth01 cron[55726]: Cron job completed successfully
+May 15 08:10:59 web01 sshd[44727]: session closed for user admin
+May 15 08:16:09 auth01 sudo[22274]: pam_unix(sshd:session): session opened for user www-data
+May 15 08:18:10 db01 sshd[16226]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 08:23:15 auth01 cron[2391]: Disk usage check: /dev/sda1 45% used
+May 15 08:24:08 auth01 cron[7245]: session opened for user admin by (uid=0)
+May 15 08:27:35 auth01 cron[14341]: Cron job completed successfully
+May 15 08:30:15 auth01 kernel[22741]: pam_unix(sshd:session): session opened for user www-data
+May 15 08:33:34 web01 pam_unix[12899]: Disk usage check: /dev/sda1 45% used
+May 15 08:37:26 web01 pam_unix[33760]: Disk usage check: /dev/sda1 45% used
+May 15 08:43:33 auth01 sudo[12771]: Disk usage check: /dev/sda1 45% used
+May 15 08:48:31 auth01 kernel[33368]: session opened for user admin by (uid=0)
+May 15 08:49:41 auth01 sshd[51237]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 08:50:12 web01 sudo[8958]: Disk usage check: /dev/sda1 45% used
+May 15 08:50:25 web01 cron[46315]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 08:56:09 auth01 kernel[8476]: Disk usage check: /dev/sda1 45% used
+May 15 09:03:27 auth01 sshd[46731]: session opened for user admin by (uid=0)
+May 15 09:05:07 auth01 pam_unix[60738]: session closed for user admin
+May 15 09:09:41 db01 cron[30202]: pam_unix(sshd:session): session opened for user www-data
+May 15 09:10:50 web01 sshd[1649]: Cron job completed successfully
+May 15 09:11:58 auth01 kernel[32126]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 09:19:46 auth01 pam_unix[48611]: Disk usage check: /dev/sda1 45% used
+May 15 09:20:05 web01 sshd[28348]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 09:21:05 web01 kernel[46641]: Cron job completed successfully
+May 15 09:21:20 auth01 sudo[47763]: pam_unix(sshd:session): session opened for user www-data
+May 15 09:23:31 db01 sudo[53363]: pam_unix(sshd:session): session opened for user www-data
+May 15 09:25:50 web01 pam_unix[50538]: Disk usage check: /dev/sda1 45% used
+May 15 09:26:38 db01 sudo[6897]: Disk usage check: /dev/sda1 45% used
+May 15 09:28:45 web01 pam_unix[48238]: session closed for user admin
+May 15 09:32:31 web01 cron[48096]: Disk usage check: /dev/sda1 45% used
+May 15 09:32:34 web01 kernel[28306]: Disk usage check: /dev/sda1 45% used
+May 15 09:32:44 auth01 cron[30854]: Disk usage check: /dev/sda1 45% used
+May 15 09:37:40 db01 cron[19984]: Disk usage check: /dev/sda1 45% used
+May 15 09:39:00 db01 sudo[42879]: Cron job completed successfully
+May 15 09:39:37 web01 sshd[40308]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 09:41:31 db01 pam_unix[7086]: Cron job completed successfully
+May 15 09:47:19 web01 pam_unix[54209]: Cron job completed successfully
+May 15 09:49:02 auth01 pam_unix[41858]: Disk usage check: /dev/sda1 45% used
+May 15 09:50:37 auth01 sshd[30220]: Disk usage check: /dev/sda1 45% used
+May 15 09:52:22 db01 pam_unix[24785]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 09:55:16 db01 sshd[44614]: session opened for user admin by (uid=0)
+May 15 09:57:08 auth01 pam_unix[41514]: Cron job completed successfully
+May 15 09:58:21 db01 pam_unix[6339]: Disk usage check: /dev/sda1 45% used
+May 15 10:02:20 web01 kernel[9476]: Cron job completed successfully
+May 15 10:02:32 auth01 cron[52446]: Disk usage check: /dev/sda1 45% used
+May 15 10:02:43 auth01 kernel[8241]: Cron job completed successfully
+May 15 10:08:11 db01 kernel[13084]: Disk usage check: /dev/sda1 45% used
+May 15 10:11:09 web01 sudo[27733]: session opened for user admin by (uid=0)
+May 15 10:14:36 web01 kernel[55941]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 10:16:05 web01 sudo[13740]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 10:19:09 web01 pam_unix[17326]: Disk usage check: /dev/sda1 45% used
+May 15 10:24:10 web01 sudo[42765]: pam_unix(sshd:session): session opened for user www-data
+May 15 10:27:07 auth01 pam_unix[57243]: Cron job completed successfully
+May 15 10:28:15 db01 sshd[64056]: Cron job completed successfully
+May 15 10:37:39 auth01 cron[59877]: session closed for user admin
+May 15 10:43:38 auth01 sudo[9681]: Disk usage check: /dev/sda1 45% used
+May 15 10:43:50 web01 pam_unix[3874]: pam_unix(sshd:session): session opened for user www-data
+May 15 10:47:01 web01 sudo[37378]: Cron job completed successfully
+May 15 10:48:45 web01 pam_unix[17245]: Cron job completed successfully
+May 15 10:48:46 auth01 kernel[18761]: session closed for user admin
+May 15 10:49:10 db01 pam_unix[28415]: Disk usage check: /dev/sda1 45% used
+May 15 10:49:17 db01 cron[48745]: Disk usage check: /dev/sda1 45% used
+May 15 10:52:05 auth01 sudo[17370]: pam_unix(sshd:session): session opened for user www-data
+May 15 10:54:00 auth01 sudo[48788]: Cron job completed successfully
+May 15 10:56:30 db01 sshd[38347]: session opened for user admin by (uid=0)
+May 15 10:57:04 auth01 cron[58631]: Cron job completed successfully
+May 15 10:59:12 web01 sudo[36009]: Disk usage check: /dev/sda1 45% used
+May 15 11:01:36 db01 sudo[63163]: Cron job completed successfully
+May 15 11:05:39 db01 sudo[14412]: session opened for user admin by (uid=0)
+May 15 11:06:15 db01 sshd[26481]: Disk usage check: /dev/sda1 45% used
+May 15 11:07:09 web01 sshd[41406]: Disk usage check: /dev/sda1 45% used
+May 15 11:07:29 db01 sudo[21371]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 11:10:57 auth01 cron[11599]: Disk usage check: /dev/sda1 45% used
+May 15 11:13:10 web01 sshd[7184]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 11:14:26 web01 sudo[3911]: Cron job completed successfully
+May 15 11:15:17 web01 kernel[52110]: Cron job completed successfully
+May 15 11:15:49 web01 sshd[2900]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 11:20:57 web01 cron[53531]: session closed for user admin
+May 15 11:28:38 db01 pam_unix[40202]: Cron job completed successfully
+May 15 11:29:13 web01 sudo[59124]: Disk usage check: /dev/sda1 45% used
+May 15 11:31:22 web01 pam_unix[28455]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 11:36:28 auth01 sshd[64216]: Cron job completed successfully
+May 15 11:41:11 auth01 pam_unix[27322]: Disk usage check: /dev/sda1 45% used
+May 15 11:41:13 web01 kernel[28833]: Disk usage check: /dev/sda1 45% used
+May 15 11:46:15 db01 pam_unix[18813]: Disk usage check: /dev/sda1 45% used
+May 15 11:52:18 auth01 pam_unix[27421]: Disk usage check: /dev/sda1 45% used
+May 15 11:52:51 db01 sudo[35099]: session opened for user admin by (uid=0)
+May 15 11:56:13 web01 cron[62451]: session opened for user admin by (uid=0)
+May 15 11:59:21 auth01 sudo[36549]: Cron job completed successfully
+May 15 11:59:59 web01 sudo[32919]: Disk usage check: /dev/sda1 45% used
+May 15 12:03:38 db01 sshd[14526]: session opened for user admin by (uid=0)
+May 15 12:12:53 web01 pam_unix[55718]: Cron job completed successfully
+May 15 12:13:54 web01 sshd[7011]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 12:13:57 db01 cron[28371]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 12:14:04 db01 pam_unix[41341]: pam_unix(sshd:session): session opened for user www-data
+May 15 12:25:41 auth01 cron[5610]: session opened for user admin by (uid=0)
+May 15 12:29:24 auth01 cron[23011]: session opened for user admin by (uid=0)
+May 15 12:38:21 web01 cron[63195]: Cron job completed successfully
+May 15 12:40:29 auth01 sudo[57073]: session closed for user admin
+May 15 12:41:18 auth01 sudo[42323]: Disk usage check: /dev/sda1 45% used
+May 15 12:44:32 auth01 sudo[46672]: Disk usage check: /dev/sda1 45% used
+May 15 12:45:01 db01 cron[8918]: session closed for user admin
+May 15 12:46:27 db01 sshd[15672]: session opened for user admin by (uid=0)
+May 15 12:50:57 db01 kernel[17339]: Cron job completed successfully
+May 15 12:51:03 auth01 pam_unix[46834]: pam_unix(sshd:session): session opened for user www-data
+May 15 12:58:24 web01 sshd[2162]: Cron job completed successfully
+May 15 13:01:45 db01 sudo[64993]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 13:02:11 auth01 pam_unix[37365]: Cron job completed successfully
+May 15 13:03:33 web01 cron[27332]: session opened for user admin by (uid=0)
+May 15 13:05:20 auth01 pam_unix[1661]: pam_unix(sshd:session): session opened for user www-data
+May 15 13:14:16 web01 kernel[18605]: session closed for user admin
+May 15 13:15:32 web01 sudo[34062]: session closed for user admin
+May 15 13:23:04 db01 sudo[1319]: session closed for user admin
+May 15 13:26:09 web01 pam_unix[31263]: Cron job completed successfully
+May 15 13:31:44 auth01 kernel[39340]: session opened for user admin by (uid=0)
+May 15 13:32:07 web01 pam_unix[4833]: session closed for user admin
+May 15 13:32:23 web01 kernel[44108]: Disk usage check: /dev/sda1 45% used
+May 15 13:35:56 web01 kernel[7893]: Cron job completed successfully
+May 15 13:37:42 auth01 sshd[54231]: pam_unix(sshd:session): session opened for user www-data
+May 15 13:38:54 db01 pam_unix[58615]: Cron job completed successfully
+May 15 13:40:28 db01 cron[59974]: pam_unix(sshd:session): session opened for user www-data
+May 15 13:41:43 auth01 sudo[31448]: session opened for user admin by (uid=0)
+May 15 13:43:24 db01 kernel[36846]: Cron job completed successfully
+May 15 13:47:00 db01 pam_unix[12787]: Cron job completed successfully
+May 15 13:47:20 web01 kernel[55693]: Cron job completed successfully
+May 15 13:47:55 db01 sudo[3504]: Cron job completed successfully
+May 15 13:49:03 db01 sshd[18714]: session closed for user admin
+May 15 13:51:29 auth01 sshd[28558]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 13:53:15 db01 pam_unix[28194]: session closed for user admin
+May 15 13:55:04 auth01 sshd[12486]: Disk usage check: /dev/sda1 45% used
+May 15 13:55:28 db01 sudo[46532]: session opened for user admin by (uid=0)
+May 15 13:59:49 auth01 sshd[34551]: Disk usage check: /dev/sda1 45% used
+May 15 14:00:55 db01 cron[57545]: session opened for user admin by (uid=0)
+May 15 14:08:32 auth01 kernel[48425]: Disk usage check: /dev/sda1 45% used
+May 15 14:12:00 web01 cron[46612]: session opened for user admin by (uid=0)
+May 15 14:15:32 db01 kernel[39787]: session closed for user admin
+May 15 14:15:39 db01 cron[45680]: session opened for user admin by (uid=0)
+May 15 14:15:43 db01 sshd[23499]: session opened for user admin by (uid=0)
+May 15 14:17:25 web01 cron[52744]: Disk usage check: /dev/sda1 45% used
+May 15 14:19:51 web01 pam_unix[21362]: Cron job completed successfully
+May 15 14:21:11 auth01 kernel[24431]: Cron job completed successfully
+May 15 14:27:26 auth01 cron[64936]: Cron job completed successfully
+May 15 14:28:56 db01 cron[31677]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 14:30:19 web01 sudo[1523]: session opened for user admin by (uid=0)
+May 15 14:31:04 web01 sshd[18221]: Disk usage check: /dev/sda1 45% used
+May 15 14:35:31 auth01 cron[62511]: session closed for user admin
+May 15 14:37:44 auth01 kernel[45230]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 14:39:00 web01 pam_unix[33301]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 14:54:29 auth01 cron[3842]: session closed for user admin
+May 15 14:55:54 db01 cron[43472]: session closed for user admin
+May 15 14:57:49 db01 sshd[27312]: session opened for user admin by (uid=0)
+May 15 14:58:52 db01 sshd[35027]: Cron job completed successfully
+May 15 15:04:30 auth01 sshd[3672]: session opened for user admin by (uid=0)
+May 15 15:05:46 db01 sshd[58675]: Cron job completed successfully
+May 15 15:09:14 db01 sudo[3356]: session closed for user admin
+May 15 15:12:28 web01 kernel[30183]: Disk usage check: /dev/sda1 45% used
+May 15 15:16:10 web01 pam_unix[23664]: Cron job completed successfully
+May 15 15:22:02 db01 cron[50251]: session closed for user admin
+May 15 15:24:27 db01 pam_unix[60633]: session closed for user admin
+May 15 15:31:52 web01 sudo[21851]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 15:35:17 web01 sudo[50136]: Disk usage check: /dev/sda1 45% used
+May 15 15:37:51 auth01 kernel[59445]: session closed for user admin
+May 15 15:39:42 db01 sudo[63677]: session opened for user admin by (uid=0)
+May 15 15:43:03 db01 kernel[2623]: pam_unix(sshd:session): session opened for user www-data
+May 15 15:44:42 db01 sudo[19181]: session opened for user admin by (uid=0)
+May 15 15:52:13 auth01 kernel[57191]: Cron job completed successfully
+May 15 15:52:29 web01 sudo[22289]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 15:55:21 db01 sudo[3413]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 15:58:45 db01 kernel[15973]: Cron job completed successfully
+May 15 16:01:05 db01 sudo[17745]: pam_unix(sshd:session): session opened for user www-data
+May 15 16:03:00 web01 sshd[56842]: session closed for user admin
+May 15 16:06:04 auth01 pam_unix[41612]: pam_unix(sshd:session): session opened for user www-data
+May 15 16:13:55 web01 pam_unix[11211]: Disk usage check: /dev/sda1 45% used
+May 15 16:16:30 auth01 cron[54028]: Disk usage check: /dev/sda1 45% used
+May 15 16:21:55 auth01 sshd[17207]: session opened for user admin by (uid=0)
+May 15 16:22:36 auth01 sshd[37142]: Cron job completed successfully
+May 15 16:22:54 auth01 pam_unix[4921]: Cron job completed successfully
+May 15 16:26:10 web01 sshd[36583]: session closed for user admin
+May 15 16:27:06 web01 cron[30946]: Cron job completed successfully
+May 15 16:33:33 web01 pam_unix[44926]: session closed for user admin
+May 15 16:36:01 auth01 cron[55766]: session opened for user admin by (uid=0)
+May 15 16:37:13 web01 kernel[52532]: session opened for user admin by (uid=0)
+May 15 16:39:02 auth01 sudo[3031]: session closed for user admin
+May 15 16:39:40 db01 sshd[55802]: Cron job completed successfully
+May 15 16:39:50 db01 cron[50866]: Cron job completed successfully
+May 15 16:39:55 db01 pam_unix[41394]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 16:44:41 auth01 pam_unix[49942]: session closed for user admin
+May 15 16:48:52 db01 pam_unix[42951]: pam_unix(sshd:session): session opened for user www-data
+May 15 16:49:46 auth01 kernel[61177]: session opened for user admin by (uid=0)
+May 15 16:50:55 db01 sshd[31236]: Disk usage check: /dev/sda1 45% used
+May 15 16:51:12 web01 sshd[3996]: session closed for user admin
+May 15 16:53:09 auth01 sshd[38076]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 16:53:53 auth01 cron[23245]: pam_unix(sshd:session): session opened for user www-data
+May 15 17:01:13 web01 sudo[47057]: session opened for user admin by (uid=0)
+May 15 17:10:23 auth01 pam_unix[52973]: pam_unix(sshd:session): session opened for user www-data
+May 15 17:16:38 db01 sudo[18650]: Disk usage check: /dev/sda1 45% used
+May 15 17:20:05 db01 kernel[7237]: Disk usage check: /dev/sda1 45% used
+May 15 17:22:14 auth01 kernel[18226]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 17:34:10 web01 kernel[21032]: Disk usage check: /dev/sda1 45% used
+May 15 17:35:52 auth01 kernel[43545]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 17:37:18 web01 pam_unix[24058]: session opened for user admin by (uid=0)
+May 15 17:45:17 db01 cron[50234]: session closed for user admin
+May 15 17:49:09 db01 pam_unix[31493]: Cron job completed successfully
+May 15 17:54:52 web01 sshd[59713]: session opened for user admin by (uid=0)
+May 15 17:55:28 db01 sshd[13719]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 17:56:34 web01 kernel[56512]: session closed for user admin
+May 15 17:58:29 db01 pam_unix[35738]: Disk usage check: /dev/sda1 45% used
+May 15 18:01:51 web01 cron[2981]: Disk usage check: /dev/sda1 45% used
+May 15 18:02:32 auth01 sshd[64045]: Cron job completed successfully
+May 15 18:03:22 auth01 sudo[35338]: Disk usage check: /dev/sda1 45% used
+May 15 18:09:55 auth01 sshd[30009]: session closed for user admin
+May 15 18:15:36 auth01 kernel[19199]: Disk usage check: /dev/sda1 45% used
+May 15 18:20:26 db01 sshd[54718]: pam_unix(sshd:session): session opened for user www-data
+May 15 18:21:49 db01 cron[5728]: Disk usage check: /dev/sda1 45% used
+May 15 18:28:00 web01 cron[30425]: Disk usage check: /dev/sda1 45% used
+May 15 18:30:48 auth01 pam_unix[18083]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 18:31:20 db01 pam_unix[61720]: session closed for user admin
+May 15 18:32:40 auth01 sshd[39490]: Cron job completed successfully
+May 15 18:35:10 auth01 pam_unix[32352]: Disk usage check: /dev/sda1 45% used
+May 15 18:35:20 web01 kernel[27613]: session closed for user admin
+May 15 18:41:36 web01 pam_unix[25630]: Cron job completed successfully
+May 15 18:41:57 db01 cron[60366]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 18:47:31 db01 cron[22407]: pam_unix(sshd:session): session opened for user www-data
+May 15 18:47:47 auth01 pam_unix[14179]: Disk usage check: /dev/sda1 45% used
+May 15 18:53:13 web01 cron[15691]: pam_unix(sshd:session): session opened for user www-data
+May 15 18:53:18 web01 sudo[58552]: Disk usage check: /dev/sda1 45% used
+May 15 18:58:50 db01 cron[42249]: session opened for user admin by (uid=0)
+May 15 19:05:26 web01 pam_unix[30543]: session closed for user admin
+May 15 19:05:43 web01 kernel[27616]: session opened for user admin by (uid=0)
+May 15 19:07:37 auth01 cron[8669]: session closed for user admin
+May 15 19:09:33 auth01 pam_unix[11496]: Cron job completed successfully
+May 15 19:13:13 db01 pam_unix[20628]: Disk usage check: /dev/sda1 45% used
+May 15 19:16:11 db01 sudo[5313]: Cron job completed successfully
+May 15 19:31:26 auth01 kernel[57167]: session closed for user admin
+May 15 19:31:39 web01 pam_unix[4865]: Cron job completed successfully
+May 15 19:33:25 web01 cron[13019]: pam_unix(sshd:session): session opened for user www-data
+May 15 19:33:47 auth01 kernel[29089]: pam_unix(sshd:session): session opened for user www-data
+May 15 19:34:14 db01 sudo[37262]: session closed for user admin
+May 15 19:37:59 web01 sshd[37245]: Cron job completed successfully
+May 15 19:40:46 auth01 cron[49732]: pam_unix(sshd:session): session opened for user www-data
+May 15 19:41:41 auth01 cron[60531]: Disk usage check: /dev/sda1 45% used
+May 15 19:45:09 db01 cron[62384]: Disk usage check: /dev/sda1 45% used
+May 15 19:45:24 web01 sudo[19290]: session closed for user admin
+May 15 19:46:16 web01 pam_unix[51614]: Cron job completed successfully
+May 15 19:53:07 db01 sudo[1405]: Cron job completed successfully
+May 15 19:58:25 db01 sudo[54788]: Disk usage check: /dev/sda1 45% used
+May 15 19:58:32 web01 kernel[2714]: Cron job completed successfully
+May 15 19:58:52 auth01 pam_unix[20227]: session opened for user admin by (uid=0)
+May 15 19:59:11 web01 sudo[3315]: Disk usage check: /dev/sda1 45% used
+May 15 20:00:19 db01 sshd[39366]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 20:03:17 web01 sshd[16309]: Disk usage check: /dev/sda1 45% used
+May 15 20:05:24 web01 pam_unix[50595]: Disk usage check: /dev/sda1 45% used
+May 15 20:06:16 db01 sudo[56516]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 20:14:09 auth01 sshd[19706]: session opened for user admin by (uid=0)
+May 15 20:14:59 db01 pam_unix[23116]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 20:16:15 web01 sudo[22946]: Disk usage check: /dev/sda1 45% used
+May 15 20:20:10 web01 cron[32074]: session closed for user admin
+May 15 20:23:03 web01 cron[19305]: pam_unix(sshd:session): session opened for user www-data
+May 15 20:24:12 db01 sshd[19200]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 20:24:22 auth01 pam_unix[20767]: pam_unix(sshd:session): session opened for user www-data
+May 15 20:26:12 db01 sudo[56473]: Disk usage check: /dev/sda1 45% used
+May 15 20:28:27 auth01 kernel[4631]: session closed for user admin
+May 15 20:41:25 web01 pam_unix[62562]: Cron job completed successfully
+May 15 20:47:12 web01 cron[54095]: Disk usage check: /dev/sda1 45% used
+May 15 20:50:56 auth01 sshd[58884]: Disk usage check: /dev/sda1 45% used
+May 15 20:56:12 web01 sudo[61921]: pam_unix(sshd:session): session opened for user www-data
+May 15 21:01:53 web01 sudo[21835]: Disk usage check: /dev/sda1 45% used
+May 15 21:02:47 db01 sshd[20705]: Cron job completed successfully
+May 15 21:05:28 web01 cron[9552]: Cron job completed successfully
+May 15 21:09:17 auth01 cron[40757]: Disk usage check: /dev/sda1 45% used
+May 15 21:15:22 auth01 sudo[61036]: session opened for user admin by (uid=0)
+May 15 21:20:57 auth01 pam_unix[11515]: pam_unix(sshd:session): session opened for user www-data
+May 15 21:21:00 web01 sudo[12177]: Cron job completed successfully
+May 15 21:24:02 db01 sudo[37224]: session closed for user admin
+May 15 21:25:04 db01 sudo[14091]: Disk usage check: /dev/sda1 45% used
+May 15 21:27:44 web01 kernel[44839]: Cron job completed successfully
+May 15 21:29:04 auth01 kernel[5323]: session opened for user admin by (uid=0)
+May 15 21:29:56 web01 sudo[56550]: pam_unix(sshd:session): session opened for user www-data
+May 15 21:30:03 auth01 sudo[52510]: pam_unix(sshd:session): session opened for user www-data
+May 15 21:33:34 web01 sudo[6308]: Disk usage check: /dev/sda1 45% used
+May 15 21:35:22 auth01 sshd[49527]: pam_unix(sshd:session): session opened for user www-data
+May 15 21:45:24 auth01 kernel[53747]: Disk usage check: /dev/sda1 45% used
+May 15 21:52:34 web01 sshd[3251]: session opened for user admin by (uid=0)
+May 15 21:54:23 web01 sshd[62125]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 22:02:02 db01 pam_unix[5118]: pam_unix(sshd:session): session opened for user www-data
+May 15 22:04:22 auth01 sudo[3755]: session closed for user admin
+May 15 22:05:01 db01 sshd[5038]: pam_unix(sshd:session): session opened for user www-data
+May 15 22:06:34 auth01 pam_unix[60121]: Cron job completed successfully
+May 15 22:07:06 web01 pam_unix[10567]: Disk usage check: /dev/sda1 45% used
+May 15 22:07:33 auth01 kernel[35912]: session opened for user admin by (uid=0)
+May 15 22:07:55 db01 kernel[47002]: Disk usage check: /dev/sda1 45% used
+May 15 22:08:26 db01 sudo[58182]: session opened for user admin by (uid=0)
+May 15 22:14:39 web01 kernel[61537]: session closed for user admin
+May 15 22:17:57 db01 sshd[33470]: session opened for user admin by (uid=0)
+May 15 22:20:40 web01 kernel[25947]: session closed for user admin
+May 15 22:27:53 db01 sudo[13407]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 22:32:31 db01 pam_unix[38169]: Disk usage check: /dev/sda1 45% used
+May 15 22:35:48 auth01 sshd[36300]: session opened for user admin by (uid=0)
+May 15 22:41:35 web01 pam_unix[36313]: Cron job completed successfully
+May 15 22:43:05 db01 pam_unix[48847]: Cron job completed successfully
+May 15 22:45:58 db01 sudo[12792]: Disk usage check: /dev/sda1 45% used
+May 15 22:48:27 db01 sudo[3500]: Cron job completed successfully
+May 15 22:55:19 auth01 pam_unix[23186]: Cron job completed successfully
+May 15 23:01:03 web01 sudo[38838]: Disk usage check: /dev/sda1 45% used
+May 15 23:01:49 auth01 kernel[30511]: Disk usage check: /dev/sda1 45% used
+May 15 23:06:37 web01 cron[31877]: session opened for user admin by (uid=0)
+May 15 23:08:32 db01 sshd[2049]: Cron job completed successfully
+May 15 23:10:23 web01 sudo[4526]: session opened for user admin by (uid=0)
+May 15 23:11:07 db01 kernel[57799]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 23:11:40 web01 cron[29964]: Cron job completed successfully
+May 15 23:14:14 web01 cron[41407]: session closed for user admin
+May 15 23:15:17 web01 cron[50804]: session opened for user admin by (uid=0)
+May 15 23:15:59 db01 cron[28154]: Disk usage check: /dev/sda1 45% used
+May 15 23:19:29 web01 cron[25036]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 23:21:03 db01 kernel[47235]: Disk usage check: /dev/sda1 45% used
+May 15 23:22:21 db01 cron[11691]: pam_unix(sshd:session): session opened for user www-data
+May 15 23:22:36 db01 kernel[48064]: Disk usage check: /dev/sda1 45% used
+May 15 23:22:37 web01 cron[52338]: session closed for user admin
+May 15 23:23:09 web01 cron[57099]: Cron job completed successfully
+May 15 23:26:19 auth01 kernel[29078]: Cron job completed successfully
+May 15 23:34:39 web01 sudo[5212]: session opened for user admin by (uid=0)
+May 15 23:40:22 db01 cron[44092]: Disk usage check: /dev/sda1 45% used
+May 15 23:40:59 db01 pam_unix[40814]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 23:41:27 web01 sudo[12615]: Disk usage check: /dev/sda1 45% used
+May 15 23:44:28 auth01 pam_unix[9014]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
+May 15 23:52:47 db01 cron[50213]: pam_unix(sshd:session): session opened for user www-data
+May 15 23:54:45 web01 kernel[63769]: Disk usage check: /dev/sda1 45% used
+May 15 23:56:27 db01 kernel[43532]: session opened for user admin by (uid=0)
+May 15 23:58:41 auth01 sshd[33366]: Accepted publickey for deploy from 203.0.113.5 port 55320 ssh2
